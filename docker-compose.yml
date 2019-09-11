@@ -6,6 +6,11 @@ services:
     build:
       context: dummy-app
       dockerfile: Dockerfile
+  app2:
+    image: Pipl/webapp:1.0.0
+    build:
+      context: webapp
+      dockerfile: Dockerfile
   filebeat:
     hostname: filebeat
     image: Pipl/filebeat:1.0.0
