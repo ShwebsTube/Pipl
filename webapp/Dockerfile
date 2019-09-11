@@ -6,4 +6,5 @@ RUN apt-get update \
 COPY index.html /var/www/html/
 WORKDIR /var/www/html
 CMD ["apachectl", "-D", "FOREGROUND"]
+CMD while true; do sleep 2 ; echo "{\"app\": \"dummy2\", \"foo\": \"bar2\"}"; done
 EXPOSE 80
