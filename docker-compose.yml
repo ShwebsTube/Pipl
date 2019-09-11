@@ -6,11 +6,7 @@ services:
     build:
       context: dummy-app
       dockerfile: Dockerfile
-  app2:
-    image: pipl/webapp:1.0.0
-    build:
-      context: webapp
-      dockerfile: Dockerfile
+ 
   filebeat:
     hostname: filebeat
     image: pipl/filebeat:1.0.0
@@ -22,8 +18,7 @@ services:
      - "/var/run/docker.sock:/var/run/docker.sock"
     links:
        - logstash
-    networks:
-      - esnet   
+   
 
   kibana:
     image: kibana:6.5.2
@@ -33,8 +28,7 @@ services:
       - elasticsearch
     ports:
       - 5601:5601
-    networks:
-      - esnet
+  
 
   logstash: 
     hostname: logstash 
@@ -48,8 +42,7 @@ services:
       LOG_LEVEL: error
     links:
       - elasticsearch
-    networks:
-      - esnet
+   
       
   elasticsearch:
     hostname: elasticsearch
@@ -72,10 +65,9 @@ services:
         hard: -1
     ports:
       - 9200:9200
-    networks:
-      - esnet   
+      
   elasticsearch2:
-    hostname: elasticsearch2
+    hostname: elasticsearch
     image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
@@ -91,12 +83,10 @@ services:
     ulimits:
       memlock:
         soft: -1
-        hard: -1    
-    networks:
-      - esnet   
+        hard: -1     
 
   elasticsearch3:
-    hostname: elasticsearch3
+    hostname: elasticsearch
     image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
@@ -116,7 +106,7 @@ services:
     networks:
       - esnet     
   elasticsearch4:
-    hostname: elasticsearch4
+    hostname: elasticsearch
     image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
@@ -133,9 +123,7 @@ services:
       memlock:
         soft: -1
         hard: -1  
-    networks:
-      - esnet    
-
+ 
 volumes:
   esdata1:
     driver: local
@@ -146,6 +134,4 @@ volumes:
   esdata4:
     driver: local  
 
-networks:
-   esnet:    
-     
+
