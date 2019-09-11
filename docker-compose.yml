@@ -2,18 +2,18 @@ version: '3'
 
 services:
   app:
-    image: Pipl/dummy-app:1.0.0
+    image: pipl/dummy-app:1.0.0
     build:
       context: dummy-app
       dockerfile: Dockerfile
   app2:
-    image: Pipl/webapp:1.0.0
+    image: pipl/webapp:1.0.0
     build:
       context: webapp
       dockerfile: Dockerfile
   filebeat:
     hostname: filebeat
-    image: Pipl/filebeat:1.0.0
+    image: pipl/filebeat:1.0.0
     build:
       context: filebeat
       dockerfile: Dockerfile
@@ -38,7 +38,7 @@ services:
 
   logstash: 
     hostname: logstash 
-    image: Pipl/logstash:1.0.0
+    image: pipl/logstash:1.0.0
     build:
       context: logstash
       dockerfile: Dockerfile
@@ -53,7 +53,7 @@ services:
       
   elasticsearch:
     hostname: elasticsearch
-    image: Pipl/elasticsearch:1.0.0
+    image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
       dockerfile: Dockerfile
@@ -76,7 +76,7 @@ services:
       - esnet   
   elasticsearch2:
     hostname: elasticsearch2
-    image: Pipl/elasticsearch:1.0.0
+    image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
       dockerfile: Dockerfile
@@ -97,7 +97,7 @@ services:
 
   elasticsearch3:
     hostname: elasticsearch3
-    image: Pipl/elasticsearch:1.0.0
+    image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
       dockerfile: Dockerfile
@@ -117,7 +117,7 @@ services:
       - esnet     
   elasticsearch4:
     hostname: elasticsearch4
-    image: Pipl/elasticsearch:1.0.0
+    image: pipl/elasticsearch:1.0.0
     build:
       context: elasticsearch
       dockerfile: Dockerfile
