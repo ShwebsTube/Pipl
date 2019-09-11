@@ -147,5 +147,5 @@ volumes:
     driver: local  
 
 networks:
-   esnet    
+   esnet:    
      
