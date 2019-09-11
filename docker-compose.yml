@@ -51,6 +51,9 @@ services:
       context: elasticsearch
       dockerfile: Dockerfile
     environment:
+      - node.master=true
+      - node.ingest=true
+      - node.data=false
       - cluster.name=docker-logs-elk-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
@@ -73,6 +76,9 @@ services:
       context: elasticsearch
       dockerfile: Dockerfile
     environment:
+      - node.master=true
+      - node.ingest=true
+      - node.data=false
       - cluster.name=docker-logs-elk-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
@@ -92,6 +98,9 @@ services:
       context: elasticsearch
       dockerfile: Dockerfile
     environment:
+      - node.master=true
+      - node.ingest=false
+      - node.data=false
       - cluster.name=docker-logs-elk-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
@@ -111,6 +120,9 @@ services:
       context: elasticsearch
       dockerfile: Dockerfile
     environment:
+      - node.master=false
+      - node.ingest=false
+      - node.data=true
       - cluster.name=docker-logs-elk-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
