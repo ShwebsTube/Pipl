@@ -145,4 +145,5 @@ volumes:
   esdata4:
     driver: local  
 
-
+networks:
+  local:
